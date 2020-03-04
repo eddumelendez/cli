@@ -23,6 +23,8 @@ func TestPrCreateHelperProcess(*testing.T) {
 
 	args := test.GetTestHelperProcessArgs()
 	switch args[1] {
+	case "log":
+		fmt.Println("123,cool,\"\"")
 	case "status":
 		switch args[0] {
 		case "clean":
@@ -100,9 +102,9 @@ func TestPRCreate_web(t *testing.T) {
 	eq(t, output.String(), "")
 	eq(t, output.Stderr(), "Opening github.com/OWNER/REPO/compare/master...feature in your browser.\n")
 
-	eq(t, len(ranCommands), 3)
+	eq(t, len(ranCommands), 4)
 	eq(t, strings.Join(ranCommands[1], " "), "git push --set-upstream origin HEAD:feature")
-	eq(t, ranCommands[2][len(ranCommands[2])-1], "https://github.com/OWNER/REPO/compare/master...feature?expand=1")
+	eq(t, ranCommands[3][len(ranCommands[3])-1], "https://github.com/OWNER/REPO/compare/master...feature?expand=1")
 }
 
 func TestPRCreate_ReportsUncommittedChanges(t *testing.T) {
