@@ -216,3 +216,18 @@ func TestPRCreate_cross_repo_same_branch(t *testing.T) {
 
 	// goal: only care that gql is formatted properly
 }
+
+/*
+ We aren't testing the survey code paths /at all/.
+
+ so if we want to test those code paths, some cases:
+
+ - user supplies no -t/-b and wants to preview in browser
+ - user supplies no -t/-b and wants to submit directly
+ - user supplies no -t/-b and wants to edit the title
+ - user supplies no -t/-b and wants to edit the body
+
+ checking that defaults are generated appropriately each time.
+
+ it seems that each survey prompt needs to be an injectable hook.
+*/
