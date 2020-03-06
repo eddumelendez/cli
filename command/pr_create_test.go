@@ -227,7 +227,20 @@ func TestPRCreate_cross_repo_same_branch(t *testing.T) {
  - user supplies no -t/-b and wants to edit the title
  - user supplies no -t/-b and wants to edit the body
 
+ for defaults:
+
+ - one commit
+ - multiple commits
+
  checking that defaults are generated appropriately each time.
 
  it seems that each survey prompt needs to be an injectable hook.
 */
+
+func PRCreate_survey_preview_defaults(t *testing.T) {
+	// there are going to be calls to:
+	// - git status
+	// - git push
+	// - git rev-parse
+	// - git log
+}

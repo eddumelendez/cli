@@ -33,7 +33,7 @@ func computeDefaults(baseRef, headRef string) (defaults, error) {
 	} else {
 		out.Title = headRef // TODO format or something?
 
-		body := fmt.Sprintf("---\n%s:\n\n", utils.Pluralize(len(commits), "commit"))
+		body := fmt.Sprintf("---\n%d commits:\n\n", len(commits))
 		for _, c := range commits {
 			body += fmt.Sprintf("- %s %s\n", c.Sha[0:5], c.Title)
 		}
