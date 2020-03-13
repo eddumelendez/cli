@@ -30,6 +30,7 @@ func init() {
 	prListCmd.Flags().StringP("base", "B", "", "Filter by base branch")
 	prListCmd.Flags().StringSliceP("label", "l", nil, "Filter by label")
 	prListCmd.Flags().StringP("assignee", "a", "", "Filter by assignee")
+	prListCmd.Flags().StringP("author", "A", "", "Filter by author")
 
 	prViewCmd.Flags().BoolP("preview", "p", false, "Display preview of pull request content")
 }

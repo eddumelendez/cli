@@ -489,7 +489,8 @@ func PullRequestList(client *Client, vars map[string]interface{}, limit int) ([]
 			labels: $labels,
 			first: $limit,
 			after: $endCursor,
-			orderBy: {field: CREATED_AT, direction: DESC}
+			orderBy: {field: CREATED_AT, direction: DESC},
+			filterBy: {createdBy: $author}
 		) {
           edges {
             node {
